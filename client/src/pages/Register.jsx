@@ -18,6 +18,7 @@ const countryOptions = [
 ];
 
 const Register = () => {
+  const REACT_APP_API_URL = "";
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -47,7 +48,7 @@ const Register = () => {
         password: formData.password,
       };
 
-      const res = await axios.post("http://localhost:3000/api/users/register", payload, {
+      const res = await axios.post("https://smart-khata-api.onrender.com/api/users/register", payload, {
         withCredentials: true,
       });
 

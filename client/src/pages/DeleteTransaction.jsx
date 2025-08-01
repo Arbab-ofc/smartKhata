@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 
 const DeleteTransaction = () => {
+  const REACT_APP_API_URL = "";
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -18,7 +19,7 @@ const DeleteTransaction = () => {
   const handleDelete = async () => {
     try {
       const res = await axios.delete(
-        `http://localhost:3000/api/transactions/delete/${id}`,
+        `https://smart-khata-api.onrender.com/api/transactions/delete/${id}`,
         { withCredentials: true }
       );
 

@@ -4,6 +4,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const ChangePassword = () => {
+  const REACT_APP_API_URL = "";
   const [formData, setFormData] = useState({
     oldPassword: '',
     newPassword: '',
@@ -32,7 +33,7 @@ const ChangePassword = () => {
     }
 
     try {
-      const res = await fetch('http://localhost:3000/api/users/change-password', {
+      const res = await fetch('https://smart-khata-api.onrender.com/api/users/change-password', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

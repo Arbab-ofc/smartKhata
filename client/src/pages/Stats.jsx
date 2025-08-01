@@ -10,13 +10,14 @@ const getRandomColor = () =>
   `hsl(${Math.floor(Math.random() * 360)}, 70%, 60%)`;
 
 const Stats = () => {
+  const REACT_APP_API_URL = "";
   const [stats, setStats] = useState(null);
   const [error, setError] = useState("");
 
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/api/transactions/stats", {
+        const res = await axios.get("https://smart-khata-api.onrender.com/api/transactions/stats", {
           withCredentials: true,
         });
         if (res.data.success) {

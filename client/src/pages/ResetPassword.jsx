@@ -3,6 +3,7 @@ import { FaEnvelope, FaLock } from "react-icons/fa";
 import axios from "axios";
 
 const ResetPassword = () => {
+  const REACT_APP_API_URL = "";
   const [formData, setFormData] = useState({
     email: "",
     newPassword: "",
@@ -20,7 +21,7 @@ const ResetPassword = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:3000/api/users/reset-password", formData, {
+      const res = await axios.post("https://smart-khata-api.onrender.com/api/users/reset-password", formData, {
         withCredentials: true,
       });
 

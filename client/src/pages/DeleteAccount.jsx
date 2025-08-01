@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import 'react-toastify/dist/ReactToastify.css';
 
 const DeleteAccount = () => {
+  const REACT_APP_API_URL = "";
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
@@ -16,7 +17,7 @@ const DeleteAccount = () => {
     }
 
     try {
-      const res = await fetch('http://localhost:3000/api/users/delete-account', {
+      const res = await fetch('https://smart-khata-api.onrender.com/api/users/delete-account', {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
@@ -32,7 +33,7 @@ const DeleteAccount = () => {
       toast.success('Your account has been deleted successfully');
 
       // ✅ Logout after account deletion
-      await fetch('http://localhost:3000/api/users/logout', {
+      await fetch('https://smart-khata-api.onrender.com/api/users/logout', {
         method: 'POST',
         credentials: 'include',
       });

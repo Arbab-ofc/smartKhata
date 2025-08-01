@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 
 const ForgetPassword = () => {
+  const REACT_APP_API_URL = "";
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [otp, setOtp] = useState("");
@@ -18,7 +19,7 @@ const ForgetPassword = () => {
 
   try {
     const res = await axios.post(
-      "http://localhost:3000/api/users/send-forget-password-otp",
+      "https://smart-khata-api.onrender.com/api/users/send-forget-password-otp",
       { email },
       { withCredentials: true }
     );
@@ -50,7 +51,7 @@ const ForgetPassword = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/users/forgot-password",
+        "https://smart-khata-api.onrender.com/api/users/forgot-password",
         { email, otp },
         { withCredentials: true }
       );

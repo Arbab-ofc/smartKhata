@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const UpdateTransaction = () => {
+  const REACT_APP_API_URL = "";
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -19,7 +20,7 @@ const UpdateTransaction = () => {
   useEffect(() => {
     const fetchTransaction = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/api/transactions/all`, {
+        const res = await axios.get(`https://smart-khata-api.onrender.com/api/transactions/all`, {
           withCredentials: true,
         });
         const transaction = res.data.transaction;
@@ -60,7 +61,7 @@ const UpdateTransaction = () => {
   const handleUpdate = async () => {
     try {
       const res = await axios.put(
-        `http://localhost:3000/api/transactions/update/${id}`,
+        `https://smart-khata-api.onrender.com/api/transactions/update/${id}`,
         formData,
         { withCredentials: true }
       );

@@ -9,13 +9,14 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Header = () => {
+  const REACT_APP_API_URL = "";
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   const { isLoggedIn, setIsLoggedIn } = useAuth();
   const navigate = useNavigate();
   const handleLogout = async () => {
     try {
-      await axios.post("http://localhost:3000/api/users/logout", {}, { withCredentials: true });
+      await axios.post("https://smart-khata-api.onrender.com/api/users/logout", {}, { withCredentials: true });
       setIsLoggedIn(false);
       navigate("/login");
     } catch (error) {

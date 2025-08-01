@@ -12,7 +12,7 @@ dotenv.config();
 const app = express();
 app.use(
   cors({
-    origin: 'http://localhost:5173', // your frontend URL
+    origin: "https://smart-khata-client.vercel.app",// your frontend URL
     credentials: true, // allow sending cookies (important for auth)
   })
 );

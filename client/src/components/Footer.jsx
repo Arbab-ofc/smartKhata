@@ -2,6 +2,7 @@ import { TypeAnimation } from 'react-type-animation';
 import { FaGithub, FaLinkedin, FaXTwitter } from 'react-icons/fa6';
 
 const Footer = () => {
+  const REACT_APP_API_URL = "";
   return (
     <footer className="bg-gray-900 text-white py-6 z-55">
       <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">

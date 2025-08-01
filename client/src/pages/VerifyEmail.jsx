@@ -5,6 +5,7 @@ import { FaEnvelope, FaCheckCircle } from "react-icons/fa";
 import axios from "axios";
 
 const VerifyEmail = () => {
+  const REACT_APP_API_URL = "";
   const location = useLocation();
   const navigate = useNavigate();
   const [otp, setOtp] = useState("");
@@ -14,7 +15,7 @@ const VerifyEmail = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3000/api/users/verify-email", {
+      const response = await fetch("https://smart-khata-api.onrender.com/api/users/verify-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

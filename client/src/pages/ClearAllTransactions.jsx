@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const ClearAllTransactions = () => {
+  const REACT_APP_API_URL = "";
   const navigate = useNavigate();
 
   const onDeletedAll = async () => {
@@ -10,7 +11,7 @@ const ClearAllTransactions = () => {
     if (!confirmed) return;
 
     try {
-      const res = await fetch('http://localhost:3000/api/transactions/clear', {
+      const res = await fetch('https://smart-khata-api.onrender.com/api/transactions/clear', {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

@@ -6,6 +6,7 @@ import axios from "axios";
 import { useAuth } from "../context/AuthContext.jsx";
 
 const Login = () => {
+  const REACT_APP_API_URL = "";
   const { isLoggedIn, setIsLoggedIn } = useAuth();
 
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -24,7 +25,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/users/login",
+        "https://smart-khata-api.onrender.com/api/users/login",
         formData,
         { withCredentials: true }
       );

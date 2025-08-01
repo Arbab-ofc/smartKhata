@@ -4,6 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
 const AddTransaction = () => {
+  const REACT_APP_API_URL = "";
   const { isLoggedIn, setIsLoggedIn } = useAuth();
   const navigate = useNavigate();
 
@@ -41,7 +42,7 @@ const AddTransaction = () => {
   useEffect(() => {
     const verifyUser = async () => {
       try {
-        const res = await axios.get('http://localhost:3000/api/users/me', {
+        const res = await axios.get('https://smart-khata-api.onrender.com/api/users/me', {
           withCredentials: true,
         });
 
@@ -74,7 +75,7 @@ const AddTransaction = () => {
 
     try {
       const res = await axios.post(
-        'http://localhost:3000/api/transactions/add',
+        'https://smart-khata-api.onrender.com/api/transactions/add',
         formData,
         { withCredentials: true }
       );

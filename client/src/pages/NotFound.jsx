@@ -4,6 +4,7 @@ import { TypeAnimation } from "react-type-animation";
 import { FaArrowLeft } from "react-icons/fa";
 
 const NotFound = () => {
+  const REACT_APP_API_URL = "";
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-purple-100 to-purple-300 dark:bg-gray-900 dark:text-white px-4">
       <div className="text-center">

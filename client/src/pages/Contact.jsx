@@ -4,6 +4,7 @@ import { FaEnvelope, FaUser, FaCommentAlt, FaPaperPlane } from "react-icons/fa";
 import toast from "react-hot-toast";
 
 const Contact = () => {
+  const REACT_APP_API_URL = "";
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -18,7 +19,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:3000/api/contact/create", formData);
+      const res = await axios.post("https://smart-khata-api.onrender.com/api/contact/create", formData);
       toast.success(res.data.message || "Message sent successfully!");
       setFormData({
         name: "",

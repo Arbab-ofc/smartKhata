@@ -4,6 +4,7 @@ import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom"; // ✅ import navigate
 
 const AllTransactions = () => {
+  const REACT_APP_API_URL = "";
   const [transactions, setTransactions] = useState([]);
   const [loading, setLoading] = useState(true);
   const { isLoggedIn } = useAuth();
@@ -14,7 +15,7 @@ const AllTransactions = () => {
 
     const fetchTransactions = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/api/transactions/all", {
+        const res = await axios.get("https://smart-khata-api.onrender.com/api/transactions/all", {
           withCredentials: true,
         });
         setTransactions(res.data.transactions);

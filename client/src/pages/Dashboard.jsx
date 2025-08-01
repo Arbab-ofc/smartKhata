@@ -15,6 +15,7 @@ import { useAuth } from "../context/AuthContext";
 import axios from "axios";
 
 const Dashboard = () => {
+  const REACT_APP_API_URL = "";
   const navigate = useNavigate();
   const { isLoggedIn } = useAuth();
 
@@ -26,7 +27,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchRecentTransactions = async () => {
       try {
-        const { data } = await axios.get("http://localhost:3000/api/transactions/recent-transaction" , { withCredentials: true });
+        const { data } = await axios.get("https://smart-khata-api.onrender.com/api/transactions/recent-transaction" , { withCredentials: true });
         setRecentTransactions(data.transactions || []);
       } catch (error) {
         console.error("Error fetching transactions", error);

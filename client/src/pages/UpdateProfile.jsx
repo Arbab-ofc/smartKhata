@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import 'react-toastify/dist/ReactToastify.css';
 
 const UpdateProfile = () => {
+  const REACT_APP_API_URL = "";
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
@@ -27,7 +28,7 @@ const UpdateProfile = () => {
     }
 
     try {
-      const res = await fetch('http://localhost:3000/api/users/update-profile', {
+      const res = await fetch('https://smart-khata-api.onrender.com/api/users/update-profile', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

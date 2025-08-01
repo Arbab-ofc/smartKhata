@@ -2,6 +2,7 @@ import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
 
 const Home = () => {
+  const REACT_APP_API_URL = "";
   return (
     <div className="pt-24 px-4 md:px-10 lg:px-20 bg-gray-50 min-h-screen text-gray-800">
 

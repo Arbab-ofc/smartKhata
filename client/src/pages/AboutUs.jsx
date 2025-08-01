@@ -5,6 +5,7 @@ import { loadFull } from "tsparticles";
 import { useCallback } from "react";
 
 export default function AboutUs() {
+  const REACT_APP_API_URL = "";
   const particlesInit = useCallback(async (engine) => {
     await loadFull(engine);
   }, []);

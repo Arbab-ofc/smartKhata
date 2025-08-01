@@ -5,11 +5,12 @@ import axios from 'axios';
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
+  const REACT_APP_API_URL = "";
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/api/users/me", { withCredentials: true });
+        const res = await axios.get("https://smart-khata-api.onrender.com/api/users/me", { withCredentials: true });
         if (res.data.user) {
           setIsLoggedIn(true);
         }
